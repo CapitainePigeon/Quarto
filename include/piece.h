@@ -11,11 +11,13 @@ class piece
         virtual ~piece();
         void pieceCaractere();
 
+
     private:
         bool couleur;
         bool taille;
         bool forme;
         bool pleine;
+        char caractere;
 };
 
 #endif // PIECE_H

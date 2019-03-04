@@ -3,14 +3,14 @@
 
 ReserveDePiece::ReserveDePiece()
 {
-   // piece p = piece(true,true,true,true);
+    piece p = piece(true,true,true,true);
     //ctor
     int nb_ligne=4;
     int nb_colonne=4;
-    piece reserve[nb_ligne][nb_colonne];
+    piece *reserve[nb_ligne][nb_colonne];
     for (int i = 0; i < nb_ligne; i++)
         for (int j = 0; j < nb_colonne; j++)
-            reserve[i][j]= piece(true,true,true,true);
+            reserve[i][j]= new piece(true,true,true,true);
 
 }
 
