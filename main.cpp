@@ -2,20 +2,24 @@
 #include "piece.h"
 #include "ReserveDePiece.h"
 #include"plateau.h"
+#include <SDL2/SDL.h>
+#include <stdio.h>
 
 using namespace std;
 
-int main()
+int main(int argc,char** argv)
 {
     /*
     ReserveDePiece r= ReserveDePiece();
 
     p.pieceCaractere();
-    */
+
     piece pi= piece(true,true,true,true);
     plateau p = plateau();
-    for (int i = 0; i < p.getNbLignes(); i++){
-        for (int j = 0; j < p.getNbColonnes(); j++){
+    for (int i = 0; i < p.getNbLignes(); i++)
+    {
+        for (int j = 0; j < p.getNbColonnes(); j++)
+        {
             cout<<p.getXY(i,j)->getCaractere();
         }
         cout<<endl;
@@ -23,12 +27,19 @@ int main()
 
     p.placer(pi,2,2);
 
-    for (int i = 0; i < p.getNbLignes(); i++){
-        for (int j = 0; j < p.getNbColonnes(); j++){
+    for (int i = 0; i < p.getNbLignes(); i++)
+    {
+        for (int j = 0; j < p.getNbColonnes(); j++)
+        {
             cout<<p.getXY(i,j)->getCaractere();
         }
         cout<<endl;
     }
 
-    return 0;
+    return 0; */
+
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,SDL_WINDOW_SHOWN);
+    SDL_Delay(10000);
+
 }

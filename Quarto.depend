@@ -5,18 +5,18 @@
 	"ReserveDePiece.h"
 	"plateau.h"
 
-1551691670 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
+1551694354 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
 
-1551691757 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\piece.cpp
+1551694354 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\piece.cpp
 	<iostream>
 	<string.h>
 	"piece.h"
 
-1551692748 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
+1551694353 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
 	"plateau.h"
 	<cassert>
 
-1551692719 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\plateau.h
+1551694352 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\plateau.h
 	"piece.h"
 
 1551689294 source:d:\cours\polytech\algo complexité\quarto-master\src\piece.cpp
@@ -44,9 +44,14 @@
 	"piece.h"
 	"ReserveDePiece.h"
 
-1551687961 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\reservedepiece.h
+1551694358 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\reservedepiece.h
 
 1551689482 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\reservedepiece.cpp
 	"ReserveDePiece.h"
 	"piece.h"
+
+1551693801 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\combinaison.cpp
+	"Combinaison.h"
+
+1551694358 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\combinaison.h
 

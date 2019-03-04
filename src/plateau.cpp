@@ -16,31 +16,36 @@ plateau::~plateau()
     //dtor
 }
 
-int plateau::getNbLignes () {
-	return nb_ligne;
+int plateau::getNbLignes ()
+{
+    return nb_ligne;
 }
 
-int plateau::getNbColonnes (){
-	return nb_colonne;
+int plateau::getNbColonnes ()
+{
+    return nb_colonne;
 }
 
-piece* plateau::getXY (const int x, const int y){
-	assert(x>=0);
-	assert(y>=0);
-	assert(x<nb_ligne);
-	assert(y<nb_colonne);
-	return plat[x][y];
+piece* plateau::getXY (const int x, const int y)
+{
+    assert(x>=0);
+    assert(y>=0);
+    assert(x<nb_ligne);
+    assert(y<nb_colonne);
+    return plat[x][y];
 }
 
-void plateau::setXY (const int x, const int y, piece p){
-	assert(x>=0);
-	assert(y>=0);
-	assert(x<nb_ligne);
-	assert(y<nb_colonne);
-	*plat[x][y]= p;
+void plateau::setXY (const int x, const int y, piece p)
+{
+    assert(x>=0);
+    assert(y>=0);
+    assert(x<nb_ligne);
+    assert(y<nb_colonne);
+    *plat[x][y]= p;
 }
 
-void plateau::placer(piece p, int x, int y){
+void plateau::placer(piece p, int x, int y)
+{
     setXY(x,y,p);
 }
 
