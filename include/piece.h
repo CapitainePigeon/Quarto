@@ -4,10 +4,10 @@
 
 class piece
 {
-    public:
+    public: //constructeurs
         piece();
+        piece (couleur, taille, forme, pleine);
         virtual ~piece();
-
 
     protected:
 
