@@ -6,10 +6,11 @@ class piece
 {
     public: //constructeurs
         piece();
-        piece (couleur, taille, forme, pleine);
+        piece(couleur, taille, forme, pleine);
         virtual ~piece();
+        void pieceCaractere();
 
-    protected:
+
 
     private:
         bool couleur;
