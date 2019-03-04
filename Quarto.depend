@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1551686975 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
+1551688236 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
 	<iostream>
 	"piece.h"
 
-1551686911 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
+1551688519 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
 
 1551687433 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\piece.cpp
 	<iostream>
