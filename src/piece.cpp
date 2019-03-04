@@ -6,7 +6,7 @@ using namespace std;
 
 piece::piece()
 {
-    //ctor
+    caractere='#';
 }
 
 piece::~piece()
@@ -19,6 +19,10 @@ piece::piece(bool c, bool t,bool f, bool p){
     taille=t;
     forme=f;
     pleine=p;
+}
+
+char piece::getCaractere(){
+    return caractere;
 }
 
 
