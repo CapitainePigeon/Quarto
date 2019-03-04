@@ -6,7 +6,7 @@ class piece
 {
     public: //constructeurs
         piece();
-        piece(couleur, taille, forme, pleine);
+        piece(bool couleur,bool taille,bool forme,bool pleine);
         virtual ~piece();
         void pieceCaractere();
 
