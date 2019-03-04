@@ -1,9 +1,11 @@
 #include <iostream>
+#include "piece.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    piece p = piece(true,true,true,true);
+    p.pieceCaractere();
     return 0;
 }
