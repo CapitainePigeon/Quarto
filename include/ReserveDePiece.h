@@ -4,13 +4,13 @@
 
 class ReserveDePiece
 {
-    public:
-        ReserveDePiece();
-        virtual ~ReserveDePiece();
+public:
+    ReserveDePiece();
+    virtual ~ReserveDePiece();
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // RESERVEDEPIECE_H

@@ -1,24 +1,26 @@
 #ifndef PLATEAU_H
 #define PLATEAU_H
-
+#include "piece.h"
 
 class plateau
 {
-    public:
-        plateau();
-        virtual ~plateau();
-        placer
+public:
+    plateau();
+    virtual ~plateau();
+    int getNbColonnes();
+    int getNbLignes();
+    void setXY(const int x,const int y, piece p);
+    void placer(piece p, int x, int y);
+    piece* getXY(const int x, const int y);
 
-    protected:
+protected:
 
-    private:
-        int nb_colonne;
-        int nb_ligne;
-        int getNbColonnes();
-        int getNbLignes();
-        char getXY(const int x, const int y);
-        void setXY(const int x,const int y, char car);
-        void placer(piece p, int x, int y);
+private:
+    int nb_colonne;
+    int nb_ligne;
+    piece* plat[100][100] ;
+
+
 };
 
 #endif // PLATEAU_H
