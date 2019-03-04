@@ -1,4 +1,8 @@
+#include <iostream>
+#include<string.h>
 #include "piece.h"
+
+using namespace std;
 
 piece::piece()
 {
@@ -11,6 +15,10 @@ piece::~piece()
 }
 
 void piece::pieceCaractere(){
-    string binaire = couleur+taille+forme+pleine;
+    string binaire = couleur ? "1" : "0";
+    binaire += taille ? "1" : "0";
+    binaire += forme ? "1" : "0";
+    binaire += pleine ? "1" : "0";
+
     cout<<binaire<<endl;
 }

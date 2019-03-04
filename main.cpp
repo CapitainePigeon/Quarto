@@ -1,11 +1,11 @@
 #include <iostream>
-#include "piece.h"
+#include "piece.cpp"
 
 using namespace std;
 
 int main()
 {
-    piece p = piece(true,true,true,true);
+    piece p= piece(true,true,true,true);
     p.pieceCaractere();
     return 0;
 }
