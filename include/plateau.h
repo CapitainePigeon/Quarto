@@ -11,7 +11,7 @@ class plateau
         int getNbLignes();
         void setXY(const int x,const int y, piece p);
         void placer(piece p, int x, int y);
-        piece getXY(const int x, const int y);
+        piece* getXY(const int x, const int y);
 
     protected:
 

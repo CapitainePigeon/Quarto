@@ -19,6 +19,7 @@ piece::piece(bool c, bool t,bool f, bool p){
     taille=t;
     forme=f;
     pleine=p;
+    pieceCaractere();
 }
 
 char piece::getCaractere(){
