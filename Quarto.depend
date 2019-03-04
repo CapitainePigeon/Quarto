@@ -35,9 +35,10 @@
 	"ReserveDePiece.h"
 	"piece.h"
 
-1551685879 d:\cours\polytech\algo complexité\quarto-master\include\reservedepiece.h
+1551691524 d:\cours\polytech\algo complexité\quarto-master\include\reservedepiece.h
+	"piece.h"
 
-1551688833 source:d:\cours\polytech\algo complexité\quarto-master\main.cpp
+1551689321 source:d:\cours\polytech\algo complexité\quarto-master\main.cpp
 	<iostream>
 	"piece.h"
 	"ReserveDePiece.h"
