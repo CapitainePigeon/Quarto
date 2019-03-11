@@ -58,10 +58,10 @@
 
 1540998544 D
 
-1552290575 source:d:\cours\polytech\algo complexité\quarto1\main.cpp
+1552292510 source:d:\cours\polytech\algo complexité\quarto1\main.cpp
 	<iostream>
 	"Piece.h"
-	"ReserveDePiece.h"
+	"Partie.h"
 	"Plateau.h"
 	<SDL2/SDL.h>
 	<stdio.h>
@@ -71,17 +71,18 @@
 1552290591 d:\cours\polytech\algo complexité\quarto1\include\reservedepiece.h
 	"piece.h"
 
-1552290469 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
+1552293611 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
 	"Piece.h"
 
-1552290469 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
+1552291149 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
 	<iostream>
 	<string.h>
 	"Piece.h"
 
-1552290469 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
+1552293674 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
 	"Plateau.h"
 	<cassert>
+	<iostream>
 
 1552290020 
 
@@ -539,20 +540,24 @@
 
 1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_version.h
 
-1552290020 source:d:\cours\polytech\algo complexité\quarto1\src\reservedepiece.cpp
+1552293123 source:d:\cours\polytech\algo complexité\quarto1\src\reservedepiece.cpp
 	"ReserveDePiece.h"
 	"piece.h"
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
+	"Piece.h"
 
 1552289701 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
 	"Partie.h"
 
 1552289964 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
 
-1552290469 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
+1552293482 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
+	"piece.h"
+	"plateau.h"
+	"ReserveDePiece.h"
 
 1552290469 d:\cours\polytech\algo complexité\quarto1\include\partie.h
 

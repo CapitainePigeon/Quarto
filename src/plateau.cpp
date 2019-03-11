@@ -1,14 +1,16 @@
 #include "Plateau.h"
 #include<cassert>
+#include <iostream>
+using namespace std;
 
 Plateau::Plateau()
 {
     nb_ligne=4;
     nb_colonne=4;
     plat[nb_ligne][nb_colonne];
-    for (int i = 0; i < nb_ligne; i++)
+   /* for (int i = 0; i < nb_ligne; i++)
         for (int j = 0; j < nb_colonne; j++)
-            plat[i][j]= new Piece();
+            plat[i][j]= new Piece();*/
 }
 
 Plateau::~Plateau()
@@ -35,18 +37,27 @@ Piece* Plateau::getXY (const int x, const int y)
     return plat[x][y];
 }
 
-void Plateau::setXY (const int x, const int y, Piece p)
+void Plateau::setXY (const int x, const int y, Piece* p)
 {
     assert(x>=0);
     assert(y>=0);
     assert(x<nb_ligne);
     assert(y<nb_colonne);
-    *plat[x][y]= p;
+    plat[x][y]= p;
 }
 
-void Plateau::placer(Piece p, int x, int y)
+void Plateau::placer(Piece* p, int x, int y)
 {
     setXY(x,y,p);
+}
+
+void Plateau::affiche () {
+    for(int i=0 ; i<nb_ligne;i++){
+        for(int j=0 ; j<nb_colonne;j++){
+            cout<<plat[i][j]->getCaractere();
+        }
+        cout<<endl;
+    }
 }
 
 

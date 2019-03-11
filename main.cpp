@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Piece.h"
-#include "ReserveDePiece.h"
+#include "Partie.h"
 #include"Plateau.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
@@ -10,7 +10,8 @@ using namespace std;
 int main(int argc,char** argv)
 {
 
-    ReserveDePiece r= ReserveDePiece();
+
+    Partie partie = Partie();
 
     //r.affiche();
     /*piece p= piece(true,true,true,true);
