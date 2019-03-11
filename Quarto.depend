@@ -19,35 +19,61 @@
 1551691699 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\plateau.h
 	"piece.h"
 
-1551689294 source:d:\cours\polytech\algo complexité\quarto-master\src\piece.cpp
+1551691997 source:d:\cours\polytech\algo complexité\quarto-master\src\piece.cpp
 	<iostream>
 	<string.h>
 	"piece.h"
 
-1551689294 d:\cours\polytech\algo complexité\quarto-master\include\piece.h
+1551691997 d:\cours\polytech\algo complexité\quarto-master\include\piece.h
 
-1551687938 source:d:\cours\polytech\algo complexité\quarto-master\src\plateau.cpp
+1551691997 source:d:\cours\polytech\algo complexité\quarto-master\src\plateau.cpp
 	"plateau.h"
 	<cassert>
 
-1551687938 d:\cours\polytech\algo complexité\quarto-master\include\plateau.h
+1551691997 d:\cours\polytech\algo complexité\quarto-master\include\plateau.h
 	"piece.h"
 
-1551688787 source:d:\cours\polytech\algo complexité\quarto-master\src\reservedepiece.cpp
+1551692673 source:d:\cours\polytech\algo complexité\quarto-master\src\reservedepiece.cpp
 	"ReserveDePiece.h"
 	"piece.h"
+	<stdio.h>
+	<stdlib.h>
 
-1551691524 d:\cours\polytech\algo complexité\quarto-master\include\reservedepiece.h
+1551692689 d:\cours\polytech\algo complexité\quarto-master\include\reservedepiece.h
 	"piece.h"
 
-1551689321 source:d:\cours\polytech\algo complexité\quarto-master\main.cpp
+1551692471 source:d:\cours\polytech\algo complexité\quarto-master\main.cpp
 	<iostream>
 	"piece.h"
 	"ReserveDePiece.h"
+	"plateau.h"
 
 1551687961 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\reservedepiece.h
 
 1551689482 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\reservedepiece.cpp
 	"ReserveDePiece.h"
 	"piece.h"
+
+1551692471 source:d:\cours\polytech\algo complexité\quarto1\main.cpp
+	<iostream>
+	"piece.h"
+	"ReserveDePiece.h"
+	"plateau.h"
+
+1551691997 d:\cours\polytech\algo complexité\quarto1\include\piece.h
+
+1551692689 d:\cours\polytech\algo complexité\quarto1\include\reservedepiece.h
+	"piece.h"
+
+1551691997 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
+	"piece.h"
+
+1551691997 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
+	<iostream>
+	<string.h>
+	"piece.h"
+
+1551691997 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
+	"plateau.h"
+	<cassert>
 

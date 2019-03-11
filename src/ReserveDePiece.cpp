@@ -7,9 +7,9 @@ ReserveDePiece::ReserveDePiece()
 {
     piece p = piece(true,true,true,true);
     //ctor
-    int nb_ligne=4;
-    int nb_colonne=4;
-    piece *reserve[nb_ligne][nb_colonne];
+    nb_ligne=4;
+    nb_colonne=4;
+//    reserve[nb_ligne][nb_colonne];
     reserve[0][1]= new piece(true,true,true,true);
     reserve[0][1]= new piece(true,true,true,false);
     reserve[0][2]= new piece(true,true,false,true);
@@ -32,11 +32,11 @@ ReserveDePiece::ReserveDePiece()
 
 }
 void ReserveDePiece::affiche () {
-    for(int i=0 ; i<nbligne;i++){
-        for(int j=0 ; j<nbcolone;j++){
-            printf(reserve[i][j]);
+    for(int i=0 ; i<nb_ligne;i++){
+        for(int j=0 ; j<nb_colonne;j++){
+            cout<<reserve[i][j]->getCaractere();
         }
-        printf("\n");
+        cout<<endl
     }
 }
 
