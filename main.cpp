@@ -1,7 +1,7 @@
 #include <iostream>
-#include "piece.h"
+#include "Piece.h"
 #include "ReserveDePiece.h"
-#include"plateau.h"
+#include"Plateau.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
 
@@ -9,13 +9,12 @@ using namespace std;
 
 int main(int argc,char** argv)
 {
-    /*
-    ReserveDePiece r= ReserveDePiece();
 
-    p.pieceCaractere();
+   /* ReserveDePiece r= ReserveDePiece();
 
-    piece pi= piece(true,true,true,true);
-    plateau p = plateau();
+    Piece pi= Piece(true,true,true,true);
+    Plateau p = Plateau();
+
     for (int i = 0; i < p.getNbLignes(); i++)
     {
         for (int j = 0; j < p.getNbColonnes(); j++)

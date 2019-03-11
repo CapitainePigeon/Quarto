@@ -1,20 +1,20 @@
 #include <iostream>
 #include<string.h>
-#include "piece.h"
+#include "Piece.h"
 
 using namespace std;
 
-piece::piece()
+Piece::Piece()
 {
     caractere='#';
 }
 
-piece::~piece()
+Piece::~Piece()
 {
     //dtor
 }
 
-piece::piece(bool c, bool t,bool f, bool p)
+Piece::Piece(bool c, bool t,bool f, bool p)
 {
     couleur=c;
     taille=t;
@@ -23,13 +23,13 @@ piece::piece(bool c, bool t,bool f, bool p)
     pieceCaractere();
 }
 
-char piece::getCaractere()
+char Piece::getCaractere()
 {
     return caractere;
 }
 
 
-void piece::pieceCaractere()
+void Piece::pieceCaractere()
 {
     int binaire = couleur ? 1 : 0;
     binaire = (binaire*10)+(taille ? 1 : 0);

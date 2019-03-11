@@ -1,16 +1,16 @@
 #include "ReserveDePiece.h"
-#include "piece.h"
+#include "Piece.h"
 
 ReserveDePiece::ReserveDePiece()
 {
-    piece p = piece(true,true,true,true);
+    Piece p = Piece(true,true,true,true);
     //ctor
     int nb_ligne=4;
     int nb_colonne=4;
-    piece *reserve[nb_ligne][nb_colonne];
+    Piece *reserve[nb_ligne][nb_colonne];
     for (int i = 0; i < nb_ligne; i++)
         for (int j = 0; j < nb_colonne; j++)
-            reserve[i][j]= new piece(true,true,true,true);
+            reserve[i][j]= new Piece(true,true,true,true);
 
 }
 

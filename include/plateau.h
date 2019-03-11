@@ -1,24 +1,24 @@
 #ifndef PLATEAU_H
 #define PLATEAU_H
-#include "piece.h"
+#include "Piece.h"
 
-class plateau
+class Plateau
 {
 public:
-    plateau();
-    virtual ~plateau();
+    Plateau();
+    virtual ~Plateau();
     int getNbColonnes();
     int getNbLignes();
-    void setXY(const int x,const int y, piece p);
-    void placer(piece p, int x, int y);
-    piece* getXY(const int x, const int y);
+    void setXY(const int x,const int y, Piece p);
+    void placer(Piece p, int x, int y);
+    Piece* getXY(const int x, const int y);
 
 protected:
 
 private:
     int nb_colonne;
     int nb_ligne;
-    piece* plat[100][100] ;
+    Piece* plat[100][100] ;
 
 
 };

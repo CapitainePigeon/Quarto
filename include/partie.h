@@ -2,15 +2,16 @@
 #define PARTIE_H
 
 
-class partie
+class Partie
 {
     public:
-        partie();
-        virtual ~partie();
+        Partie();
+        virtual ~Partie();
 
     protected:
 
     private:
+
 };
 
 #endif // PARTIE_H
