@@ -1,7 +1,7 @@
 #include <iostream>
-#include "piece.h"
+#include "Piece.h"
 #include "ReserveDePiece.h"
-#include"plateau.h"
+#include"Plateau.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
 
@@ -18,6 +18,12 @@ int main(int argc,char** argv)
 
 
     plateau p = plateau();
+
+   /* ReserveDePiece r= ReserveDePiece();
+
+    Piece pi= Piece(true,true,true,true);
+    Plateau p = Plateau();
+
     for (int i = 0; i < p.getNbLignes(); i++)
     {
         for (int j = 0; j < p.getNbColonnes(); j++)

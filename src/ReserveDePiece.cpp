@@ -1,38 +1,43 @@
 #include "ReserveDePiece.h"
+
 #include "piece.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include "Piece.h"
 using namespace std;
+
+
+
 
 ReserveDePiece::ReserveDePiece()
 {
-    piece p = piece(true,true,true,true);
-    //ctor
+    Piece p = Piece(true,true,true,true);
+
     nb_ligne=4;
     nb_colonne=4;
-//    reserve[nb_ligne][nb_colonne];
+ //   reserve[nb_ligne][nb_colonne];
     cout<<"RESERVE";
     cout<<endl;
-    reserve[0][1]= new piece(true,true,true,true);
-    reserve[0][1]= new piece(true,true,true,false);
-    reserve[0][2]= new piece(true,true,false,true);
-    reserve[0][3]= new piece(true,true,false,false);
+    reserve[0][1]= new Piece(true,true,true,true);
+    reserve[0][1]= new Piece(true,true,true,false);
+    reserve[0][2]= new Piece(true,true,false,true);
+    reserve[0][3]= new Piece(true,true,false,false);
 
-    reserve[1][1]= new piece(true,false,true,true);
-    reserve[1][1]= new piece(true,false,true,false);
-    reserve[1][2]= new piece(true,false,false,true);
-    reserve[1][3]= new piece(true,false,false,false);
+    reserve[1][1]= new Piece(true,false,true,true);
+    reserve[1][1]= new Piece(true,false,true,false);
+    reserve[1][2]= new Piece(true,false,false,true);
+    reserve[1][3]= new Piece(true,false,false,false);
 
-    reserve[2][1]= new piece(false,true,true,true);
-    reserve[2][1]= new piece(false,true,true,false);
-    reserve[2][2]= new piece(false,true,false,true);
-    reserve[2][3]= new piece(false,true,false,false);
+    reserve[2][1]= new Piece(false,true,true,true);
+    reserve[2][1]= new Piece(false,true,true,false);
+    reserve[2][2]= new Piece(false,true,false,true);
+    reserve[2][3]= new Piece(false,true,false,false);
 
-    reserve[3][1]= new piece(false,false,true,true);
-    reserve[3][1]= new piece(false,false,true,false);
-    reserve[3][2]= new piece(false,false,false,true);
-    reserve[3][3]= new piece(false,false,false,false);
+    reserve[3][1]= new Piece(false,false,true,true);
+    reserve[3][1]= new Piece(false,false,true,false);
+    reserve[3][2]= new Piece(false,false,false,true);
+    reserve[3][3]= new Piece(false,false,false,false);
 
     cout<<"FIN RESERVE";
     cout<<endl;

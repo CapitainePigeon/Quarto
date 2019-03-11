@@ -18,7 +18,7 @@ protected:
     private:
         int nb_ligne;
         int nb_colonne;
-        piece *reserve[4][4];
+        Piece *reserve[4][4];
 
 };
 

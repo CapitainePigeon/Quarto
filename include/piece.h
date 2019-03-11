@@ -2,13 +2,13 @@
 #define PIECE_H
 
 
-class piece
+class Piece
 {
 public: //constructeurs
-    piece();
+    Piece();
 
-    piece(bool couleur, bool taille,bool forme, bool pleine);
-    virtual ~piece();
+    Piece(bool couleur, bool taille,bool forme, bool pleine);
+    virtual ~Piece();
     void pieceCaractere();
     char getCaractere();
 
