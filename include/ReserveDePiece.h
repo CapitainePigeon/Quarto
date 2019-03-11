@@ -5,12 +5,15 @@
 
 class ReserveDePiece
 {
+
     public:
         ReserveDePiece();
         virtual ~ReserveDePiece();
         void affiche();
 
-    protected:
+
+protected:
+
 
     private:
         int nb_ligne;

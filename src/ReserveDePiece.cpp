@@ -2,6 +2,8 @@
 #include "piece.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 ReserveDePiece::ReserveDePiece()
 {
@@ -10,6 +12,8 @@ ReserveDePiece::ReserveDePiece()
     nb_ligne=4;
     nb_colonne=4;
 //    reserve[nb_ligne][nb_colonne];
+    cout<<"RESERVE";
+    cout<<endl;
     reserve[0][1]= new piece(true,true,true,true);
     reserve[0][1]= new piece(true,true,true,false);
     reserve[0][2]= new piece(true,true,false,true);
@@ -30,13 +34,15 @@ ReserveDePiece::ReserveDePiece()
     reserve[3][2]= new piece(false,false,false,true);
     reserve[3][3]= new piece(false,false,false,false);
 
+    cout<<"FIN RESERVE";
+    cout<<endl;
 }
 void ReserveDePiece::affiche () {
     for(int i=0 ; i<nb_ligne;i++){
         for(int j=0 ; j<nb_colonne;j++){
             cout<<reserve[i][j]->getCaractere();
         }
-        cout<<endl
+        cout<<endl;
     }
 }
 
