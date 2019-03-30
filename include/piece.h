@@ -11,13 +11,14 @@ public: //constructeurs
     virtual ~Piece();
     void pieceCaractere();
     char getCaractere();
-
-
-private:
     bool couleur;
     bool taille;
     bool forme;
     bool pleine;
+
+
+private:
+
     char caractere;
 };
 

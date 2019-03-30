@@ -43,14 +43,12 @@
 			<Add directory="./Library/Linker/SDL2" />
 		</Linker>
 		<Unit filename="include/Combinaison.h" />
-		<Unit filename="include/ReserveDePiece.h" />
 		<Unit filename="include/partie.h" />
 		<Unit filename="include/piece.h" />
 		<Unit filename="include/plateau.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Combinaison.cpp" />
 		<Unit filename="src/Partie.cpp" />
-		<Unit filename="src/ReserveDePiece.cpp" />
 		<Unit filename="src/piece.cpp" />
 		<Unit filename="src/plateau.cpp" />
 		<Extensions>

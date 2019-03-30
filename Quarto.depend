@@ -66,7 +66,7 @@
 	<SDL2/SDL.h>
 	<stdio.h>
 
-1552290469 d:\cours\polytech\algo complexité\quarto1\include\piece.h
+1552296862 d:\cours\polytech\algo complexité\quarto1\include\piece.h
 
 1552290591 d:\cours\polytech\algo complexité\quarto1\include\reservedepiece.h
 	"piece.h"
@@ -93,10 +93,11 @@
 
 1551694358 3fe075897a123c774f95a31a286a51b55f3e6
 
-1552288935 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
+1552298163 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
 	"Combinaison.h"
 
-1552288935 d:\cours\polytech\algo complexité\quarto1\include\combinaison.h
+1552298146 d:\cours\polytech\algo complexité\quarto1\include\combinaison.h
+	"Partie.h"
 
 1552288934 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl.h
 
@@ -553,11 +554,12 @@
 
 1552289964 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
 
-1552293482 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
+1552298924 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
 	"ReserveDePiece.h"
 
-1552290469 d:\cours\polytech\algo complexité\quarto1\include\partie.h
+1552298949 d:\cours\polytech\algo complexité\quarto1\include\partie.h
+	"Piece.h"
 
