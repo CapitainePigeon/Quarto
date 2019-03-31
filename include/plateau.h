@@ -9,9 +9,9 @@ public:
     virtual ~Plateau();
     int getNbColonnes();
     int getNbLignes();
-    void setXY(const int x,const int y, Piece* p);
+    void setXY( int x, int y, Piece* p);
     void placer(Piece* p, int x, int y);
-    Piece* getXY(const int x, const int y);
+    Piece* getXY( int x,  int y);
     void affiche();
 
 protected:
@@ -19,7 +19,7 @@ protected:
 private:
     int nb_colonne;
     int nb_ligne;
-    Piece* plat[100][100] ;
+    Piece* plat[4][4] ;
 
 
 };

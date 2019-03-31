@@ -1,6 +1,7 @@
 #ifndef PARTIE_H
 #define PARTIE_H
 #include "Piece.h"
+#include "Plateau.h"
 
 class Partie
 {
@@ -8,6 +9,8 @@ class Partie
         Partie();
         virtual ~Partie();
         bool gagne(Piece* pieces);
+        Plateau getPlateau();
+        Plateau getReserve();
 
     protected:
 

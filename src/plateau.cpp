@@ -7,7 +7,7 @@ Plateau::Plateau()
 {
     nb_ligne=4;
     nb_colonne=4;
-    plat[nb_ligne][nb_colonne];
+    //plat[nb_ligne][nb_colonne];
    /* for (int i = 0; i < nb_ligne; i++)
         for (int j = 0; j < nb_colonne; j++)
             plat[i][j]= new Piece();*/
@@ -28,16 +28,17 @@ int Plateau::getNbColonnes ()
     return nb_colonne;
 }
 
-Piece* Plateau::getXY (const int x, const int y)
+Piece* Plateau::getXY ( int x, int y)
 {
-    assert(x>=0);
+    /*assert(x>=0);
     assert(y>=0);
     assert(x<nb_ligne);
-    assert(y<nb_colonne);
+    assert(y<nb_colonne);*/
+    //printf("%c \n",plat[x][y]->getCaractere());
     return plat[x][y];
 }
 
-void Plateau::setXY (const int x, const int y, Piece* p)
+void Plateau::setXY ( int x, int y, Piece* p)
 {
     assert(x>=0);
     assert(y>=0);

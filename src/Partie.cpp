@@ -3,12 +3,15 @@
 #include "plateau.h"
 #include "ReserveDePiece.h"
 
+Plateau reserve;
+Plateau plat;
+
 Partie::Partie()
 {
-    Plateau reserve= Plateau();
-    Plateau plat= Plateau();
+    reserve= Plateau();
+    plat= Plateau();
 
-    reserve.setXY(0,1, new Piece(true,true,true,true));
+    reserve.setXY(0,0, new Piece(true,true,true,true));
     reserve.setXY(0,1, new Piece(true,true,true,false));
     reserve.setXY(0,2, new Piece(true,true,false,true));
     reserve.setXY(0,3, new Piece(true,true,false,false));
@@ -39,6 +42,17 @@ bool Partie::gagne(Piece* pieces){
             (pieces[0].pleine   && pieces[1].pleine     && pieces[2].pleine     && pieces[3].pleine));
 
 }
+
+Plateau Partie::getPlateau()
+{
+    return plat;
+}
+
+Plateau Partie::getReserve()
+{
+    return reserve;
+}
+
 
 Partie::~Partie()
 {
