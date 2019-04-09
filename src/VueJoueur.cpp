@@ -12,8 +12,8 @@ SDL_Window* gWindow ;
 SDL_Surface* gPiece;
 SDL_Surface* gScreenSurface;
 SDL_Rect image;
-const int SCREEN_WIDTH = 900;
-const int SCREEN_HEIGHT = 400;
+const int SCREEN_WIDTH = 890;
+const int SCREEN_HEIGHT = 390;
 
 VueJoueur::VueJoueur()
 {
@@ -25,9 +25,78 @@ VueJoueur::VueJoueur()
     SDL_Rect stretchRect;
     stretchRect.x = 0;
     stretchRect.y = 0;
-    stretchRect.w = 900;
-    stretchRect.h = 400;
+    stretchRect.w = 890;
+    stretchRect.h = 390;
     SDL_BlitScaled( loadSurface( "images/blanc.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 390;
+    stretchRect.y = 0;
+    stretchRect.w = 100;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 90;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 190;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 290;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 0;
+    stretchRect.y = 90;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 0;
+    stretchRect.y = 190;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 0;
+    stretchRect.y = 290;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+
+
+
+    stretchRect.x = 590;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 690;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 790;
+    stretchRect.y = 0;
+    stretchRect.w = 10;
+    stretchRect.h = 400;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 490;
+    stretchRect.y = 90;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 490;
+    stretchRect.y = 190;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+    stretchRect.x = 490;
+    stretchRect.y = 290;
+    stretchRect.w = 400;
+    stretchRect.h = 10;
+    SDL_BlitScaled( loadSurface( "images/noir.png" ), NULL, gScreenSurface, &stretchRect );
+
     SDL_UpdateWindowSurface( gWindow );
 
 
@@ -108,7 +177,7 @@ SDL_Surface* VueJoueur::loadSurface( std::string path )
 
 SDL_Surface* VueJoueur::loadpiece(Piece piece)
 {
-    printf("3");
+   // printf("3");
     gPiece = NULL;
     string imageName ="images/";
 
@@ -155,8 +224,8 @@ void VueJoueur::chargerPlateau(int x,int y,Piece* piece)
 
     image.x = x*100 +500;
     image.y = y*100;
-    image.w=100;
-    image.h=100;
+    image.w=90;
+    image.h=90;
 
     loadpiece(*piece);
     SDL_BlitScaled( gPiece, NULL, gScreenSurface, &image );
@@ -168,8 +237,8 @@ void VueJoueur::chargerReserve(int x,int y,Piece* piece)
 {
     image.x = x*100;
     image.y = y*100;
-    image.w=100;
-    image.h=100;
+    image.w=90;
+    image.h=90;
 
     loadpiece(*piece);
     SDL_BlitScaled( gPiece, NULL, gScreenSurface, &image );
@@ -182,10 +251,90 @@ void VueJoueur::chargerReserve(int x,int y,Piece* piece)
 void VueJoueur::viderReserve(int x,int y){
     image.x = x*100;
     image.y = y*100;
-    image.w=100;
-    image.h=100;
+    image.w=90;
+    image.h=90;
 
     SDL_BlitScaled( loadSurface( "images/blanc.png" ), NULL, gScreenSurface, &image );
     SDL_UpdateWindowSurface( gWindow );
 }
 
+int VueJoueur::coordonnee(int x)
+{
+    int xretour=-1;
+    if (x>0 && x<90)
+    {
+        xretour=0;
+    }
+    if (x>100 && x<190)
+    {
+        xretour=1;
+    }
+    if (x>200 && x<290)
+    {
+        xretour=2;
+    }
+    if (x>300 && x<390)
+    {
+        xretour=3;
+    }
+    if (x>500 && x<590)
+    {
+        xretour=4;
+    }
+    if (x>600 && x<690)
+    {
+        xretour=5;
+    }
+    if (x>700 && x<790)
+    {
+        xretour=6;
+    }
+    if (x>800 && x<890)
+    {
+        xretour=7;
+    }
+    return xretour;
+}
+
+void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau)
+{
+    *xReserve = -1;
+    *yReserve = -1;
+    *xPlateau = -1;
+    *yPlateau = -1;
+    int x=0,y=0;
+    SDL_Event e;
+    while( *xReserve==-1 || *yReserve==-1)
+    {
+        while( SDL_PollEvent( &e ) )
+        {
+
+            if( e.type == SDL_MOUSEBUTTONDOWN)
+            {
+                //printf("cc");
+                SDL_GetMouseState( &x, &y );
+                *xReserve=coordonnee(x);
+                *yReserve=coordonnee(y);
+                if(*xReserve>3)
+                    *xReserve=-1;
+                printf("x1 %d  y1 %d\n",*xReserve,*yReserve);
+            }
+        }
+    }
+    while( (*xPlateau==-1 || *yPlateau==-1 ) )
+    {
+        while( SDL_PollEvent( &e ) )
+        {
+            if( e.type == SDL_MOUSEBUTTONUP)
+            {
+                SDL_GetMouseState( &x, &y );
+                *xPlateau=coordonnee(x);
+                *yPlateau=coordonnee(y);
+                *xPlateau=*xPlateau-4;
+                if(*xPlateau<0)
+                    *xPlateau=-1;
+            }
+        }
+    }
+    printf("x1 %d  y1 %d     x2 %d  y2 %d\n",*xReserve,*yReserve,*xPlateau,*yPlateau);
+}

@@ -16,6 +16,7 @@ class VueJoueur
         void chargerPlateau(int x,int y,Piece* piece);
         void chargerReserve(int x,int y,Piece* piece);
         void viderReserve(int x,int y);
+        void clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau);
 
     protected:
 
@@ -24,6 +25,7 @@ class VueJoueur
         SDL_Surface* loadSurface( std::string path );
         SDL_Surface* loadpiece(Piece piece);
         bool initialiser();
+        int coordonnee(int x);
 
 
 

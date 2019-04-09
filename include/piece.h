@@ -8,6 +8,7 @@ public: //constructeurs
     Piece();
 
     Piece(bool couleur, bool taille,bool forme, bool pleine);
+    Piece(bool nullaa);
     virtual ~Piece();
     void pieceCaractere();
     char getCaractere();
@@ -15,11 +16,13 @@ public: //constructeurs
     bool taille;
     bool forme;
     bool pleine;
+    bool isnull;
+    char caractere;
 
 
 private:
 
-    char caractere;
+
 };
 
 #endif // PIECE_H

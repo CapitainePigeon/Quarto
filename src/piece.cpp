@@ -20,9 +20,20 @@ Piece::Piece(bool c, bool t,bool f, bool p)
     taille=t;
     forme=f;
     pleine=p;
+    isnull=false;
     pieceCaractere();
 }
 
+Piece::Piece(bool nullaa){
+
+    couleur=false;
+    taille=false;
+    forme=false;
+    pleine=false;
+    isnull=true;
+    pieceCaractere();
+
+}
 char Piece::getCaractere()
 {
     return caractere;
@@ -31,6 +42,10 @@ char Piece::getCaractere()
 
 void Piece::pieceCaractere()
 {
+    if (isnull){
+        caractere='v';
+        return;
+    }
     int binaire = couleur ? 1 : 0;
     binaire = (binaire*10)+(taille ? 1 : 0);
     binaire = (binaire*10)+(forme ? 1 : 0);
@@ -115,6 +130,7 @@ void Piece::pieceCaractere()
     case 1111:
         caractere = 'f';
         break;
+
     }
 
    // cout<<binaire<<endl;

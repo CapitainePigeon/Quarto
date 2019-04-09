@@ -1,5 +1,7 @@
 #include "Combinaison.h"
 #include "stdlib.h"
+#include <iostream>
+#include<string.h>
 Combinaison::Combinaison()
 {
     //ctor
@@ -10,17 +12,19 @@ Combinaison::~Combinaison()
     //dtor
 }
 
-static Piece** getListePieces(int forme, Plateau plateau,int x, int y ){
-    Piece** liste;
+void Combinaison::getListePieces(int forme, Plateau plateau,int x, int y,Piece** liste ){
+
     int i;
     if(forme==1){
-
+        printf("a\n");
         if((x==0 && (y==1 || y==2)) || (x==3  && (y==1 || y==2)) || (y==0 && (x==1 || x==2)) ||(y==3 && (x==1 || x==2))) {
             //pas diago
+
             liste= (Piece**)malloc(2* sizeof(*liste));
             for (i=0;i<2;i++){
                 liste[i]=(Piece*)malloc(4*sizeof(*(liste[i])));
             }
+            printf("a\n");
         }else{
             //diago
             liste= (Piece**)malloc(3* sizeof(*liste));
@@ -29,20 +33,20 @@ static Piece** getListePieces(int forme, Plateau plateau,int x, int y ){
             }
             if(x==y){
                 for (i=0;i<4;i++){
-                    liste[3][i]=*plateau.getXY(i,i);
+                    liste[3][i]=plateau.getXY(i,i);
                 }
             }else{
                 for (i=0;i<4;i++){
-                    liste[3][i]=*plateau.getXY(i,3-i);
+                    liste[3][i]=plateau.getXY(i,3-i);
                 }
             }
         }
         for (i=0;i<4;i++){
-            liste[1][i]=*plateau.getXY(x,i);
-            liste[2][i]=*plateau.getXY(i,y);
+            liste[1][i]=plateau.getXY(x,i);
+            liste[2][i]=plateau.getXY(i,y);
         }
-        return liste;
-    }
+        return;
+    }/*
     if(forme==2){
      //caré
         bool hautGauche=false;
@@ -89,7 +93,7 @@ static Piece** getListePieces(int forme, Plateau plateau,int x, int y ){
         }
 
         i=0;
-        if(hautGauche){
+        /*if(hautGauche){
             liste[i][0]=*plateau.getXY(x,y);
             liste[i][1]=*plateau.getXY(x-1,y);
             liste[i][2]=*plateau.getXY(x-1,y-1);
@@ -115,8 +119,6 @@ static Piece** getListePieces(int forme, Plateau plateau,int x, int y ){
             liste[i][3]=*plateau.getXY(x,y+1);
             i=i+1;
         }
-        return liste;
-    }
-
-
+        return ;
+    }*/
 }

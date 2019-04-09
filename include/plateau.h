@@ -13,6 +13,7 @@ public:
     void placer(Piece* p, int x, int y);
     Piece* getXY( int x,  int y);
     void affiche();
+    void emptyXY ( int x, int y);
 
 protected:
 

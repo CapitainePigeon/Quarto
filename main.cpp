@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Piece.h"
+#include "Combinaison.h"
 #include "Partie.h"
 #include "Plateau.h"
 #include "VueJoueur.h"
@@ -57,15 +58,39 @@ int main(int argc,char** argv)
         for (int j = 0; j < 4; j++)
         {
            // partie.getPlateau().getXY(i,j);
-            printf("a\n");
+            //printf("a\n");
+
             vue->chargerReserve(i,j,partie.getReserve().getXY(i,j));
 
         }
     }
+
+    int xReserve, yReserve, xPlateau, yPlateau;
+    bool gagne=false;
+    Piece** liste;
+    while(!gagne){
+
+        vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+        if( !partie.getReserve().getXY(xReserve,yReserve)->isnull && partie.getPlateau().getXY(xPlateau,yPlateau)->isnull ){
+            vue->chargerPlateau(xPlateau,yPlateau,partie.getReserve().getXY(xReserve,yReserve));
+            vue->viderReserve(xReserve,yReserve);
+            partie.getPlateau().placer(partie.getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
+
+
+            Combinaison::getListePieces(1,partie.getPlateau(),xPlateau,yPlateau,liste);
+
+          /*  sizeof(liste);
+          //  while (**liste!=NULL){
+                gagne=partie.gagne(*liste);
+                *liste++;*/
+           // }
+        }
+    }
+
     //vue->chargerPlateau(1,1,partie.getPlateau().getXY(0,3));
   //  vue->viderReserve(0,3);
     //vue.initialiser();
-    SDL_Delay(30000);
+    //SDL_Delay(30000);
 
 
     return 0;

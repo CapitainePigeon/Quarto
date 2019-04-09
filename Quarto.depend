@@ -58,29 +58,30 @@
 
 1540998544 D
 
-1554068451 source:d:\cours\polytech\algo complexité\quarto1\main.cpp
+1554815897 source:d:\cours\polytech\algo complexité\quarto1\main.cpp
 	<iostream>
 	"Piece.h"
+	"Combinaison.h"
 	"Partie.h"
 	"Plateau.h"
 	"VueJoueur.h"
 	<SDL2/SDL.h>
 	<stdio.h>
 
-1552300462 d:\cours\polytech\algo complexité\quarto1\include\piece.h
+1554369397 d:\cours\polytech\algo complexité\quarto1\include\piece.h
 
 1552294191 d:\cours\polytech\algo complexité\quarto1\include\reservedepiece.h
 	"piece.h"
 
-1554066737 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
+1554306859 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
 	"Piece.h"
 
-1554052830 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
+1554371541 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
 	<iostream>
 	<string.h>
 	"Piece.h"
 
-1554068285 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
+1554371825 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
 	"Plateau.h"
 	<cassert>
 	<iostream>
@@ -94,11 +95,13 @@
 
 1551694358 3fe075897a123c774f95a31a286a51b55f3e6
 
-1552387333 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
+1554404759 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
 	"Combinaison.h"
 	"stdlib.h"
+	<iostream>
+	<string.h>
 
-1552304924 d:\cours\polytech\algo complexité\quarto1\include\combinaison.h
+1554404261 d:\cours\polytech\algo complexité\quarto1\include\combinaison.h
 	"Plateau.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl.h
@@ -800,17 +803,19 @@
 
 1552289964 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
 
-1554067581 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
+1554373395 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
 	"ReserveDePiece.h"
+	<iostream>
+	<string.h>
 
 1554052919 d:\cours\polytech\algo complexité\quarto1\include\partie.h
 	"Piece.h"
 	"Plateau.h"
 
-1554068487 source:d:\cours\polytech\algo complexité\quarto1\src\vuejoueur.cpp
+1554307434 source:d:\cours\polytech\algo complexité\quarto1\src\vuejoueur.cpp
 	"VueJoueur.h"
 	<exception>
 	<iostream>
@@ -819,7 +824,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1554066065 d:\cours\polytech\algo complexité\quarto1\include\vuejoueur.h
+1554219907 d:\cours\polytech\algo complexité\quarto1\include\vuejoueur.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<string>

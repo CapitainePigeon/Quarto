@@ -7,7 +7,7 @@ class Combinaison
 public:
     Combinaison();
     virtual ~Combinaison();
-    static Piece** getListePieces(int forme, Plateau* plateau,int x, int y );
+    static void getListePieces(int forme, Plateau plateau,int x, int y,Piece** liste  );
 
 protected:
 
