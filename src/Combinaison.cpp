@@ -4,7 +4,7 @@
 #include<string.h>
 Combinaison::Combinaison()
 {
-    //ctor
+
 }
 
 Combinaison::~Combinaison()
@@ -12,40 +12,31 @@ Combinaison::~Combinaison()
     //dtor
 }
 
-void Combinaison::getListePieces(int forme, Plateau plateau,int x, int y,Piece** liste ){
-
+int Combinaison::getListePieces(int forme, Plateau plateau,int x, int y,Piece* liste[16][4] ){
+    int nb_liste=0;
     int i;
     if(forme==1){
-        printf("a\n");
         if((x==0 && (y==1 || y==2)) || (x==3  && (y==1 || y==2)) || (y==0 && (x==1 || x==2)) ||(y==3 && (x==1 || x==2))) {
             //pas diago
-
-            liste= (Piece**)malloc(2* sizeof(*liste));
-            for (i=0;i<2;i++){
-                liste[i]=(Piece*)malloc(4*sizeof(*(liste[i])));
-            }
-            printf("a\n");
+            nb_liste+=2;
         }else{
             //diago
-            liste= (Piece**)malloc(3* sizeof(*liste));
-            for (i=0;i<3;i++){
-                liste[i]=(Piece*)malloc(4*sizeof(*(liste[i])));
-            }
+            nb_liste+=3;
             if(x==y){
                 for (i=0;i<4;i++){
-                    liste[3][i]=plateau.getXY(i,i);
+                    liste[2][i]=plateau.getXY(i,i);
                 }
             }else{
                 for (i=0;i<4;i++){
-                    liste[3][i]=plateau.getXY(i,3-i);
+                    liste[2][i]=plateau.getXY(i,3-i);
                 }
             }
         }
         for (i=0;i<4;i++){
-            liste[1][i]=plateau.getXY(x,i);
-            liste[2][i]=plateau.getXY(i,y);
+            liste[0][i]=plateau.getXY(x,i);
+            liste[1][i]=plateau.getXY(i,y);
         }
-        return;
+        return nb_liste;
     }/*
     if(forme==2){
      //caré

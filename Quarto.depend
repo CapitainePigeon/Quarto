@@ -1,25 +1,28 @@
 # depslib dependency file v1.0
-1551696060 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
+1554846109 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
 	<iostream>
-	"piece.h"
-	"ReserveDePiece.h"
-	"plateau.h"
+	"Piece.h"
+	"Combinaison.h"
+	"Partie.h"
+	"Plateau.h"
+	"VueJoueur.h"
 	<SDL2/SDL.h>
 	<stdio.h>
 
-1552290112 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
+1554844512 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\piece.h
 
-1552290112 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\piece.cpp
+1554845711 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\piece.cpp
 	<iostream>
 	<string.h>
 	"Piece.h"
 
-1551694353 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
-	"plateau.h"
+1554834872 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
+	"Plateau.h"
 	<cassert>
+	<iostream>
 
-1551694352 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\plateau.h
-	"piece.h"
+1554816450 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\plateau.h
+	"Piece.h"
 
 1551691997 source:d:\cours\polytech\algo complexité\quarto-master\src\piece.cpp
 	<iostream>
@@ -50,10 +53,15 @@
 	"ReserveDePiece.h"
 	"plateau.h"
 
-1551694358 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\reservedepiece.h
+1554816450 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\reservedepiece.h
+	"piece.h"
 
-1552290112 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\reservedepiece.cpp
+1554816450 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\reservedepiece.cpp
 	"ReserveDePiece.h"
+	"piece.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
 	"Piece.h"
 
 1540998544 D
@@ -88,10 +96,14 @@
 
 1552290020 
 
-1551693801 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\combinaison.cpp
+1554845273 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\combinaison.cpp
 	"Combinaison.h"
+	"stdlib.h"
+	<iostream>
+	<string.h>
 
-1551694358 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\combinaison.h
+1554821384 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\combinaison.h
+	"Plateau.h"
 
 1551694358 3fe075897a123c774f95a31a286a51b55f3e6
 
@@ -137,7 +149,38 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552289964 5bf34f313584c2b671c9ab59e462c5a7ae2e5
 	"SDL_main.h"
@@ -390,7 +433,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_main.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_stdinc.h
 	"SDL_config.h"
@@ -421,7 +467,34 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_stdinc.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_config.h
 	"SDL_platform.h"
@@ -433,10 +506,15 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_config.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_platform.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\begin_code.h
 
@@ -448,11 +526,15 @@
 	<signal.h>
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\begin_code.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\begin_code.h
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\close_code.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\close_code.h
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_assert.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
@@ -461,7 +543,12 @@
 	<mbarrier.h>
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_atomic.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
@@ -473,14 +560,25 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_audio.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_error.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
@@ -488,7 +586,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_endian.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
@@ -496,7 +598,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_mutex.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
@@ -509,7 +615,16 @@
 	<stdlib.h>
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_thread.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
@@ -517,14 +632,21 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_rwops.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_clipboard.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
@@ -541,7 +663,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_cpuinfo.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_events.h
 	"SDL_stdinc.h"
@@ -557,7 +692,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_events.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_video.h
 	"SDL_stdinc.h"
@@ -567,7 +714,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_video.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
@@ -575,7 +728,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_pixels.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
@@ -585,7 +742,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_rect.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
@@ -596,7 +759,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_surface.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_blendmode.h
 	"begin_code.h"
@@ -610,11 +780,17 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_blendmode.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_keyboard.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
@@ -630,14 +806,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_keycode.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_scancode.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_mouse.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
@@ -645,7 +826,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_joystick.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
@@ -655,7 +840,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_gamecontroller.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
@@ -669,11 +860,17 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_quit.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_gesture.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
@@ -682,14 +879,22 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_touch.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_filesystem.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
@@ -698,14 +903,22 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_haptic.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_hints.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
@@ -713,14 +926,21 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_loadso.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_log.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
@@ -728,14 +948,21 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_messagebox.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_power.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292534 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_render.h
 	"SDL_stdinc.h"
@@ -744,7 +971,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_render.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_sensor.h
 	"SDL_stdinc.h"
@@ -752,7 +984,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_sensor.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_shape.h
 	"SDL_stdinc.h"
@@ -763,7 +999,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_shape.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_system.h
 	"SDL_stdinc.h"
@@ -773,7 +1016,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_system.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
@@ -781,14 +1030,21 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_timer.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552292535 d:\cours\polytech\algo complexité\quarto1\library\compiler\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1540998544 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_version.h
+1541002144 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
 1552296723 source:d:\cours\polytech\algo complexité\quarto1\src\reservedepiece.cpp
 	"ReserveDePiece.h"
@@ -798,10 +1054,17 @@
 	<iostream>
 	"Piece.h"
 
-1552289701 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
+1554846412 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
 	"Partie.h"
+	"piece.h"
+	"plateau.h"
+	"ReserveDePiece.h"
+	<iostream>
+	<string.h>
 
-1552289964 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
+1554821408 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
+	"Piece.h"
+	"Plateau.h"
 
 1554373395 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
@@ -836,4 +1099,26 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1554816450 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\vuejoueur.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<string>
+	<stdio.h>
+	"Piece.h"
+
+1554816450 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\library\compiler\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1554816450 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\vuejoueur.cpp
+	"VueJoueur.h"
+	<exception>
+	<iostream>
+	<string.h>
+	<string>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
 

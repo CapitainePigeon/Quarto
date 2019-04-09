@@ -8,7 +8,7 @@ class Partie
     public:
         Partie();
         virtual ~Partie();
-        bool gagne(Piece* pieces);
+        bool gagne(Piece* pieces[4]);
         Plateau getPlateau();
         Plateau getReserve();
 

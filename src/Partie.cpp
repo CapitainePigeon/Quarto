@@ -57,17 +57,19 @@ Partie::Partie()
     //ctor
 }
 
-bool Partie::gagne(Piece* pieces){
+bool Partie::gagne(Piece* pieces[4]){
 
-    return ((!pieces[0].isnull  && !pieces[1].isnull    && !pieces[2].isnull    && !pieces[3].isnull)&&
-            ((pieces[0].couleur  && pieces[1].couleur    && pieces[2].couleur    && pieces[3].couleur) ||
-            (pieces[0].taille   && pieces[1].taille     && pieces[2].taille     && pieces[3].taille) ||
-            (pieces[0].forme    && pieces[1].forme      && pieces[2].forme      && pieces[3].forme) ||
-            (pieces[0].pleine   && pieces[1].pleine     && pieces[2].pleine     && pieces[3].pleine)||
-            (!pieces[0].couleur  && !pieces[1].couleur    && !pieces[2].couleur    && !pieces[3].couleur) ||
-            (!pieces[0].taille   && !pieces[1].taille     && !pieces[2].taille     && !pieces[3].taille) ||
-            (!pieces[0].forme    && !pieces[1].forme      && !pieces[2].forme      && !pieces[3].forme) ||
-            (!pieces[0].pleine   && !pieces[1].pleine     && !pieces[2].pleine     && !pieces[3].pleine)));
+    if(!(pieces[0]->isnull)  && !(pieces[1]->isnull)    && !(pieces[2]->isnull)    && !(pieces[3]->isnull)){
+            return ((pieces[0]->couleur  && pieces[1]->couleur    && pieces[2]->couleur    && pieces[3]->couleur) ||
+            (pieces[0]->taille   && pieces[1]->taille     && pieces[2]->taille     && pieces[3]->taille) ||
+            (pieces[0]->forme    && pieces[1]->forme      && pieces[2]->forme      && pieces[3]->forme) ||
+            (pieces[0]->pleine   && pieces[1]->pleine     && pieces[2]->pleine     && pieces[3]->pleine)||
+            (!(pieces[0]->couleur)  && !(pieces[1]->couleur)    && !(pieces[2]->couleur)    && !(pieces[3]->couleur)) ||
+            (!(pieces[0]->taille)   && !(pieces[1]->taille)     && !(pieces[2]->taille)     && !(pieces[3]->taille)) ||
+            (!(pieces[0]->forme)    && !(pieces[1]->forme )     && !(pieces[2]->forme )     && !(pieces[3]->forme)) ||
+            (!(pieces[0]->pleine)   && !(pieces[1]->pleine )    && !(pieces[2]->pleine )    && !(pieces[3]->pleine)));
+    }
+    return false;
 
 }
 

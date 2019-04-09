@@ -67,7 +67,9 @@ int main(int argc,char** argv)
 
     int xReserve, yReserve, xPlateau, yPlateau;
     bool gagne=false;
-    Piece** liste;
+    Piece* liste[16][4];
+    Piece* pieces[4];
+
     while(!gagne){
 
         vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
@@ -77,7 +79,20 @@ int main(int argc,char** argv)
             partie.getPlateau().placer(partie.getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
 
 
-            Combinaison::getListePieces(1,partie.getPlateau(),xPlateau,yPlateau,liste);
+            int nb_liste = Combinaison::getListePieces(1,partie.getPlateau(),xPlateau,yPlateau,liste);
+            cout<<"nb_liste"<<nb_liste<<endl;
+            int i=0;
+            while(i<nb_liste && !gagne){
+                    for(int j=0;j<4;j++){
+                        cout<<liste[i][j]->isnull<<endl;
+                    }
+
+                gagne=partie.gagne(liste[i]);
+                i++;
+
+            }
+
+
 
           /*  sizeof(liste);
           //  while (**liste!=NULL){
@@ -85,6 +100,7 @@ int main(int argc,char** argv)
                 *liste++;*/
            // }
         }
+
     }
 
     //vue->chargerPlateau(1,1,partie.getPlateau().getXY(0,3));
