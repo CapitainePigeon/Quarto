@@ -1048,7 +1048,7 @@
 	<iostream>
 	"Piece.h"
 
-1555167813 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
+1555170758 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
@@ -1096,7 +1096,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555165168 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\vuejoueur.h
+1555170470 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\vuejoueur.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<string>
@@ -1111,7 +1111,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555167711 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\vuejoueur.cpp
+1555170108 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\vuejoueur.cpp
 	"VueJoueur.h"
 	<exception>
 	<iostream>

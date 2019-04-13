@@ -116,15 +116,6 @@ bool VueJoueur::initialiser()
     //Initialization flag
     bool success = true;
 
-   /*if (TTF_Init() != 0) {
-        cout << "Erreur lors de l'initialisation de la SDL_ttf : " << TTF_GetError() << endl;SDL_Quit();exit(1);
-    }
-
-    // FONTS
-   font = TTF_OpenFont("font/police.ttf",70);
-  	  if (font == NULL) {
-         	   cout << "Failed to load police.ttf! SDL_TTF Error: " << TTF_GetError() << endl; SDL_Quit();exit(1);
-		}*/
 
     //Initialize SDL
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
@@ -157,6 +148,9 @@ bool VueJoueur::initialiser()
             }
         }
     }
+
+    renderer = SDL_CreateRenderer(gWindow,-1,SDL_RENDERER_ACCELERATED);
+
     return success;
 }
 
@@ -362,27 +356,40 @@ bool VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
     return quit;
 }
 
-/*void VueJoueur::affTourJoueur(){
-    char format [50];
-    sprintf(format, "C'est à votre tour de jouer !");
-    font_color.r = 195;font_color.g = 0;font_color.b = 0;
-    font_im.setSurface(TTF_RenderText_Solid(font,format,font_color));
-    font_im.creerTextureAPartirDeSurface(renderer);
-    SDL_Rect positionTitre;
-    positionTitre.x = 100;positionTitre.y = 450;positionTitre.w = 300;positionTitre.h = 30;
-    SDL_RenderCopy(renderer,font_im.getTexture(),NULL,&positionTitre);
+void VueJoueur::affTourJoueur(bool &tourJoueur){
+    cout<<"coucou"<<endl;
+    if(tourJoueur){
+        SDL_Rect stretchRect;
+        stretchRect.x = 50;
+        stretchRect.y = 400;
+        stretchRect.w = 500;
+        stretchRect.h = 100;
+        SDL_BlitScaled( loadSurface( "images/joueur.png" ), NULL, gScreenSurface, &stretchRect );
+        tourJoueur=false;
+    }else{
+        SDL_Rect stretchRect;
+        stretchRect.x = 50;
+        stretchRect.y = 400;
+        stretchRect.w = 500;
+        stretchRect.h = 100;
+        SDL_BlitScaled( loadSurface( "images/non_joueur.png" ), NULL, gScreenSurface, &stretchRect );
+        tourJoueur=true;
+    }
 
-}*/
 
-/*void VueJoueur::avoirGagne(){
-    sprintf(format, "Vous avez perdu en %d secondes", t);
-			font_color.r = 195;font_color.g = 0;font_color.b = 0;
-			font_im.setSurface(TTF_RenderText_Solid(font,format,font_color));
-			font_im.creerTextureAPartirDeSurface(renderer);
-			SDL_Rect positionTitre;
-			positionTitre.x = 4*TAILLE_SPRITE;positionTitre.y = 13*TAILLE_SPRITE;positionTitre.w = 12*TAILLE_SPRITE;positionTitre.h = 2*TAILLE_SPRITE;
-			SDL_RenderCopy(renderer,font_im.getTexture(),NULL,&positionTitre);
+    SDL_UpdateWindowSurface( gWindow );
 
-}*/
+}
+
+void VueJoueur::avoirGagne(){
+    SDL_Rect stretchRect;
+        stretchRect.x = 200;
+        stretchRect.y = 200;
+        stretchRect.w = 500;
+        stretchRect.h = 100;
+        SDL_BlitScaled( loadSurface( "images/gagne.png" ), NULL, gScreenSurface, &stretchRect );
+        SDL_UpdateWindowSurface( gWindow );
+
+}
 
 

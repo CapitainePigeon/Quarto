@@ -23,7 +23,7 @@ class VueJoueur
         bool clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau);
         void avoirGagne();
         void avoirPerdu();
-        void affTourJoueur();
+        void affTourJoueur(bool &tourJoueur);
 
     protected:
 
@@ -33,10 +33,8 @@ class VueJoueur
         SDL_Surface* loadpiece(Piece piece);
         bool initialiser();
         int coordonnee(int x);
-        TTF_Font * font;
-        Image font_im;
-        SDL_Color font_color;
         SDL_Renderer * renderer;
+        Image im_joueur;
 
 };
 

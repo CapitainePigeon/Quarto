@@ -82,14 +82,11 @@ void Partie::Jeu(int forme){
     Piece* pieces[4];
     int nb_null=0;
 
-    while(!gagne){
+    while(!quit){
 
-        if(tourJoueur){
-            //vue-> affTourJoueur();
-            tourJoueur=false;
-        }else {
-            tourJoueur=true;
-        }
+
+        vue-> affTourJoueur(tourJoueur);
+
         quit=vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
 
         if( !this->getReserve().getXY(yReserve,xReserve)->isnull && this->getPlateau().getXY(yPlateau,xPlateau)->isnull ){
@@ -106,9 +103,9 @@ void Partie::Jeu(int forme){
                     }
 
                 gagne=this->gagne(liste[i]);
-                /*if(gagne){
+                if(gagne){
                     vue->avoirGagne();
-                }*/
+                }
                 i++;
 
             }
