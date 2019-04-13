@@ -77,7 +77,7 @@
 	<string.h>
 	"Piece.h"
 
-1555177341 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
+1555182810 source:d:\cours\polytech\algo complexité\quarto1\src\plateau.cpp
 	"Plateau.h"
 	<cassert>
 	<iostream>
@@ -95,7 +95,7 @@
 
 1551694358 3fe075897a123c774f95a31a286a51b55f3e6
 
-1555168152 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
+1555194395 source:d:\cours\polytech\algo complexité\quarto1\src\combinaison.cpp
 	"Combinaison.h"
 	"stdlib.h"
 	<iostream>
@@ -1056,7 +1056,7 @@
 	"Piece.h"
 	"Plateau.h"
 
-1555177299 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
+1555194066 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
@@ -1066,7 +1066,7 @@
 	<iostream>
 	<string.h>
 
-1555168152 d:\cours\polytech\algo complexité\quarto1\include\partie.h
+1555194066 d:\cours\polytech\algo complexité\quarto1\include\partie.h
 	"Piece.h"
 	"Plateau.h"
 

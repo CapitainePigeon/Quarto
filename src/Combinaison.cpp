@@ -16,17 +16,17 @@ Combinaison::~Combinaison()
 }
 
 int Combinaison::getListePieces(int forme, Plateau plateau,int x, int y,Piece* liste[16][4] ){
-    cout<<"x "<<x<<" y "<<y<<endl;
+    //cout<<"x "<<x<<" y "<<y<<endl;
     int nb_liste=0;
     int i;
     int compt=0;
     if(forme==1){
         if((x==0 && (y==1 || y==2)) || (x==3  && (y==1 || y==2)) || (y==0 && (x==1 || x==2)) ||(y==3 && (x==1 || x==2))) {
             //pas diagonale
-            nb_liste+=2;
+            nb_liste=2;
         }else{
             //diagonale
-            nb_liste+=3;
+            nb_liste=3;
             if(x==y){
                 for (i=0;i<4;i++){
                     liste[2][i]=plateau.getXY(i,i);
