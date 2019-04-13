@@ -2,8 +2,12 @@
 #include "piece.h"
 #include "plateau.h"
 #include "ReserveDePiece.h"
+#include "VueJoueur.h"
+#include "Combinaison.h"
 #include <iostream>
 #include<string.h>
+
+using namespace std;
 
 Plateau reserve;
 Plateau plat;
@@ -57,17 +61,81 @@ Partie::Partie()
     //ctor
 }
 
-bool Partie::gagne(Piece* pieces){
+void Partie::Jeu(int forme){
 
-    return ((!pieces[0].isnull  && !pieces[1].isnull    && !pieces[2].isnull    && !pieces[3].isnull)&&
-            ((pieces[0].couleur  && pieces[1].couleur    && pieces[2].couleur    && pieces[3].couleur) ||
-            (pieces[0].taille   && pieces[1].taille     && pieces[2].taille     && pieces[3].taille) ||
-            (pieces[0].forme    && pieces[1].forme      && pieces[2].forme      && pieces[3].forme) ||
-            (pieces[0].pleine   && pieces[1].pleine     && pieces[2].pleine     && pieces[3].pleine)||
-            (!pieces[0].couleur  && !pieces[1].couleur    && !pieces[2].couleur    && !pieces[3].couleur) ||
-            (!pieces[0].taille   && !pieces[1].taille     && !pieces[2].taille     && !pieces[3].taille) ||
-            (!pieces[0].forme    && !pieces[1].forme      && !pieces[2].forme      && !pieces[3].forme) ||
-            (!pieces[0].pleine   && !pieces[1].pleine     && !pieces[2].pleine     && !pieces[3].pleine)));
+    bool quit=false;
+    bool tourJoueur=true;
+
+    VueJoueur* vue=new VueJoueur();
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            vue->chargerReserve(i,j,this->getReserve().getXY(i,j));
+
+        }
+    }
+
+    int xReserve, yReserve, xPlateau, yPlateau;
+    bool gagne=false;
+    Piece* liste[16][4];
+    Piece* pieces[4];
+    int nb_null=0;
+
+    while(!gagne){
+
+        if(tourJoueur){
+            //vue-> affTourJoueur();
+            tourJoueur=false;
+        }else {
+            tourJoueur=true;
+        }
+        quit=vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+
+        if( !this->getReserve().getXY(yReserve,xReserve)->isnull && this->getPlateau().getXY(yPlateau,xPlateau)->isnull ){
+            vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(yReserve,xReserve));
+            vue->viderReserve(yReserve,xReserve);
+            this->getPlateau().placer(this->getReserve().getXY(yReserve,xReserve),xPlateau,yPlateau);
+            nb_null++;
+            int nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),xPlateau,yPlateau,liste);
+            cout<<"nb_liste"<<nb_liste<<endl;
+            int i=0;
+            while(i<nb_liste && !gagne){
+                    for(int j=0;j<4;j++){
+                        cout<<liste[i][j]->isnull<<endl;
+                    }
+
+                gagne=this->gagne(liste[i]);
+                /*if(gagne){
+                    vue->avoirGagne();
+                }*/
+                i++;
+
+            }
+
+            /*if(nb_null==16){
+                vue->avoirPerdu();
+            }*/
+
+
+        }
+
+    }
+}
+
+bool Partie::gagne(Piece* pieces[4]){
+
+    if(!(pieces[0]->isnull)  && !(pieces[1]->isnull)    && !(pieces[2]->isnull)    && !(pieces[3]->isnull)){
+            return ((pieces[0]->couleur  && pieces[1]->couleur    && pieces[2]->couleur    && pieces[3]->couleur) ||
+            (pieces[0]->taille   && pieces[1]->taille     && pieces[2]->taille     && pieces[3]->taille) ||
+            (pieces[0]->forme    && pieces[1]->forme      && pieces[2]->forme      && pieces[3]->forme) ||
+            (pieces[0]->pleine   && pieces[1]->pleine     && pieces[2]->pleine     && pieces[3]->pleine)||
+            (!(pieces[0]->couleur)  && !(pieces[1]->couleur)    && !(pieces[2]->couleur)    && !(pieces[3]->couleur)) ||
+            (!(pieces[0]->taille)   && !(pieces[1]->taille)     && !(pieces[2]->taille)     && !(pieces[3]->taille)) ||
+            (!(pieces[0]->forme)    && !(pieces[1]->forme )     && !(pieces[2]->forme )     && !(pieces[3]->forme)) ||
+            (!(pieces[0]->pleine)   && !(pieces[1]->pleine )    && !(pieces[2]->pleine )    && !(pieces[3]->pleine)));
+    }
+    return false;
 
 }
 

@@ -59,6 +59,7 @@ void Plateau::emptyXY ( int x, int y)
 
 void Plateau::placer(Piece* p, int x, int y)
 {
+    cout<<"placer x "<<x<<" y "<<y<<endl;
     plat[x][y]->couleur=p->couleur;
     plat[x][y]->forme=p->forme;
     plat[x][y]->pleine=p->pleine;

@@ -135,4 +135,8 @@ void Piece::pieceCaractere()
 
    // cout<<binaire<<endl;
     //cout<<caractere<<endl;
+
+
 }
+
+
