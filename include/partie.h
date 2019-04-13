@@ -11,6 +11,7 @@ class Partie
         bool gagne(Piece* pieces[4]);
         Plateau getPlateau();
         Plateau getReserve();
+        void Jeu();
 
     protected:
 

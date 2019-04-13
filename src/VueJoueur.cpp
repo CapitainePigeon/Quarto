@@ -222,7 +222,7 @@ SDL_Surface* VueJoueur::loadpiece(Piece piece)
 void VueJoueur::chargerPlateau(int x,int y,Piece* piece)
 {
 
-    image.x = x*100 +500;
+    image.x = x*100+500;
     image.y = y*100;
     image.w=90;
     image.h=90;
@@ -313,10 +313,10 @@ void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
             {
                 //printf("cc");
                 SDL_GetMouseState( &x, &y );
-                *xReserve=coordonnee(x);
-                *yReserve=coordonnee(y);
-                if(*xReserve>3)
-                    *xReserve=-1;
+                *xReserve=coordonnee(y);
+                *yReserve=coordonnee(x);
+                if(*yReserve>3)
+                    *yReserve=-1;
                 printf("x1 %d  y1 %d\n",*xReserve,*yReserve);
             }
         }
@@ -328,11 +328,11 @@ void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
             if( e.type == SDL_MOUSEBUTTONUP)
             {
                 SDL_GetMouseState( &x, &y );
-                *xPlateau=coordonnee(x);
-                *yPlateau=coordonnee(y);
-                *xPlateau=*xPlateau-4;
-                if(*xPlateau<0)
-                    *xPlateau=-1;
+                *xPlateau=coordonnee(y);
+                *yPlateau=coordonnee(x);
+                *yPlateau=*yPlateau-4;
+                if(*yPlateau<0)
+                    *yPlateau=-1;
             }
         }
     }

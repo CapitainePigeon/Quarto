@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1554846109 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
+1555147654 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\main.cpp
 	<iostream>
 	"Piece.h"
 	"Combinaison.h"
@@ -16,7 +16,7 @@
 	<string.h>
 	"Piece.h"
 
-1554834872 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
+1555153700 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\plateau.cpp
 	"Plateau.h"
 	<cassert>
 	<iostream>
@@ -96,7 +96,7 @@
 
 1552290020 
 
-1554845273 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\combinaison.cpp
+1555155380 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\combinaison.cpp
 	"Combinaison.h"
 	"stdlib.h"
 	<iostream>
@@ -1054,15 +1054,17 @@
 	<iostream>
 	"Piece.h"
 
-1554846412 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
+1555155060 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
 	"ReserveDePiece.h"
+	"VueJoueur.h"
+	"Combinaison.h"
 	<iostream>
 	<string.h>
 
-1554821408 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
+1555147641 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\partie.h
 	"Piece.h"
 	"Plateau.h"
 
@@ -1113,11 +1115,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1554816450 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\vuejoueur.cpp
+1555152107 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\vuejoueur.cpp
 	"VueJoueur.h"
 	<exception>
 	<iostream>
 	<string.h>
+	<string>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1555148075 source:d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\src\menu.cpp
+	<iostream>
+	"Menu.h"
+
+1555148022 d:\bibliothèque\documents\cours\s6\algo & complexité\quarto\include\menu.h
 	<string>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>

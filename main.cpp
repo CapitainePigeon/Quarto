@@ -14,6 +14,7 @@ int main(int argc,char** argv)
 
 
     Partie partie = Partie();
+    partie.Jeu();
 
     //r.affiche();
     /*piece p= piece(true,true,true,true);
@@ -52,56 +53,7 @@ int main(int argc,char** argv)
 //partie.getPlateau().getXY(2,1)->getCaractere();
    // cout<<partie.getPlateau().getXY(2,1)->getCaractere()<<endl;
     //printf(""+partie.getPlateau().getXY(2,1)->getCaractere());
-    VueJoueur* vue=new VueJoueur();
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-           // partie.getPlateau().getXY(i,j);
-            //printf("a\n");
 
-            vue->chargerReserve(i,j,partie.getReserve().getXY(i,j));
-
-        }
-    }
-
-    int xReserve, yReserve, xPlateau, yPlateau;
-    bool gagne=false;
-    Piece* liste[16][4];
-    Piece* pieces[4];
-
-    while(!gagne){
-
-        vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
-        if( !partie.getReserve().getXY(xReserve,yReserve)->isnull && partie.getPlateau().getXY(xPlateau,yPlateau)->isnull ){
-            vue->chargerPlateau(xPlateau,yPlateau,partie.getReserve().getXY(xReserve,yReserve));
-            vue->viderReserve(xReserve,yReserve);
-            partie.getPlateau().placer(partie.getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
-
-
-            int nb_liste = Combinaison::getListePieces(1,partie.getPlateau(),xPlateau,yPlateau,liste);
-            cout<<"nb_liste"<<nb_liste<<endl;
-            int i=0;
-            while(i<nb_liste && !gagne){
-                    for(int j=0;j<4;j++){
-                        cout<<liste[i][j]->isnull<<endl;
-                    }
-
-                gagne=partie.gagne(liste[i]);
-                i++;
-
-            }
-
-
-
-          /*  sizeof(liste);
-          //  while (**liste!=NULL){
-                gagne=partie.gagne(*liste);
-                *liste++;*/
-           // }
-        }
-
-    }
 
     //vue->chargerPlateau(1,1,partie.getPlateau().getXY(0,3));
   //  vue->viderReserve(0,3);

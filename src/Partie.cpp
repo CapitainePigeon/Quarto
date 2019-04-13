@@ -2,8 +2,12 @@
 #include "piece.h"
 #include "plateau.h"
 #include "ReserveDePiece.h"
+#include "VueJoueur.h"
+#include "Combinaison.h"
 #include <iostream>
 #include<string.h>
+
+using namespace std;
 
 Plateau reserve;
 Plateau plat;
@@ -55,6 +59,54 @@ Partie::Partie()
     plat.emptyXY(3,2);
     plat.emptyXY(3,3);
     //ctor
+}
+
+void Partie::Jeu(){
+
+    VueJoueur* vue=new VueJoueur();
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+           // partie.getPlateau().getXY(i,j);
+            //printf("a\n");
+
+            vue->chargerReserve(i,j,this->getReserve().getXY(i,j));
+
+        }
+    }
+
+    int xReserve, yReserve, xPlateau, yPlateau;
+    bool gagne=false;
+    Piece* liste[16][4];
+    Piece* pieces[4];
+
+    while(!gagne){
+
+        vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+        if( !this->getReserve().getXY(yReserve,xReserve)->isnull && this->getPlateau().getXY(yPlateau,xPlateau)->isnull ){
+            vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(yReserve,xReserve));
+            vue->viderReserve(yReserve,xReserve);
+            this->getPlateau().placer(this->getReserve().getXY(yReserve,xReserve),xPlateau,yPlateau);
+
+            cout<<this->getPlateau().getXY(xPlateau,yPlateau)->isnull<<endl;
+
+            int nb_liste = Combinaison::getListePieces(2,this->getPlateau(),xPlateau,yPlateau,liste);
+            cout<<"nb_liste"<<nb_liste<<endl;
+            int i=0;
+            while(i<nb_liste && !gagne){
+                    for(int j=0;j<4;j++){
+                        cout<<liste[i][j]->isnull<<endl;
+                    }
+
+                gagne=this->gagne(liste[i]);
+                cout<<"gagne "<<gagne<<endl;
+                i++;
+
+            }
+        }
+
+    }
 }
 
 bool Partie::gagne(Piece* pieces[4]){
