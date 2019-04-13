@@ -20,10 +20,11 @@ class VueJoueur
         void chargerPlateau(int x,int y,Piece* piece);
         void chargerReserve(int x,int y,Piece* piece);
         void viderReserve(int x,int y);
-        bool clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau);
+        bool clicPlateau(int* xPlateau,int* yPlateau);
+        bool clicReserve(int* xReserve, int* yReserve);
         void avoirGagne();
         void avoirPerdu();
-        void affTourJoueur();
+        void affTourJoueur(bool &tourJoueur);
 
     protected:
 
@@ -33,10 +34,8 @@ class VueJoueur
         SDL_Surface* loadpiece(Piece piece);
         bool initialiser();
         int coordonnee(int x);
-        TTF_Font * font;
-        Image font_im;
-        SDL_Color font_color;
         SDL_Renderer * renderer;
+        Image im_joueur;
 
 };
 

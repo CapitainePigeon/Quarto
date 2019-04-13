@@ -81,34 +81,45 @@ void Partie::Jeu(int forme){
     Piece* liste[16][4];
     Piece* pieces[4];
     int nb_null=0;
+    bool AChoisi=false;
+    vue-> affTourJoueur(tourJoueur);
+    while(!quit){
 
-    while(!gagne){
 
-        if(tourJoueur){
-            //vue-> affTourJoueur();
-            tourJoueur=false;
-        }else {
-            tourJoueur=true;
+
+
+        while(!AChoisi || this->getReserve().getXY(xReserve,yReserve)->isnull ){
+            quit=vue->clicReserve(&yReserve, &xReserve);
+            AChoisi=true;
+
+
         }
-        quit=vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+        vue-> affTourJoueur(tourJoueur);
+        AChoisi=false;
+        while(!quit &&(!AChoisi || !this->getPlateau().getXY(xPlateau,yPlateau)->isnull)){
+            quit=vue->clicPlateau( &xPlateau, &yPlateau);
+            this->getPlateau().affiche();
+            cout<<this->getPlateau().getXY(xPlateau,yPlateau)->getCaractere()<<endl;
+            AChoisi=true;
+        }
 
-        if( !this->getReserve().getXY(yReserve,xReserve)->isnull && this->getPlateau().getXY(yPlateau,xPlateau)->isnull ){
-            vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(yReserve,xReserve));
-            vue->viderReserve(yReserve,xReserve);
-            this->getPlateau().placer(this->getReserve().getXY(yReserve,xReserve),xPlateau,yPlateau);
+        if(!quit  ){
+            vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(xReserve,yReserve));
+            vue->viderReserve(xReserve,yReserve);
+            this->getPlateau().placer(this->getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
             nb_null++;
             int nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),xPlateau,yPlateau,liste);
-            cout<<"nb_liste"<<nb_liste<<endl;
+            //cout<<"nb_liste"<<nb_liste<<endl;
             int i=0;
             while(i<nb_liste && !gagne){
-                    for(int j=0;j<4;j++){
+                    /*for(int j=0;j<4;j++){
                         cout<<liste[i][j]->isnull<<endl;
-                    }
+                    }*/
 
                 gagne=this->gagne(liste[i]);
-                /*if(gagne){
+                if(gagne){
                     vue->avoirGagne();
-                }*/
+                }
                 i++;
 
             }

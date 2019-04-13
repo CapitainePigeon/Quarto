@@ -36,6 +36,7 @@ Piece::Piece(bool nullaa){
 }
 char Piece::getCaractere()
 {
+    pieceCaractere();
     return caractere;
 }
 
