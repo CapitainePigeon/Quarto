@@ -40,9 +40,12 @@
 			<Add library="libSDL2.a" />
 			<Add library="libSDL2main.a" />
 			<Add library="libSDL2.dll.a" />
+			<Add library="Library/Linker/SDL2/SDL2_ttf.lib" />
 			<Add directory="./Library/Linker/SDL2" />
 		</Linker>
 		<Unit filename="include/Combinaison.h" />
+		<Unit filename="include/Image.h" />
+		<Unit filename="include/Menu.h" />
 		<Unit filename="include/ReserveDePiece.h" />
 		<Unit filename="include/VueJoueur.h" />
 		<Unit filename="include/partie.h" />
@@ -50,6 +53,8 @@
 		<Unit filename="include/plateau.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Combinaison.cpp" />
+		<Unit filename="src/Image.cpp" />
+		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Partie.cpp" />
 		<Unit filename="src/ReserveDePiece.cpp" />
 		<Unit filename="src/VueJoueur.cpp" />

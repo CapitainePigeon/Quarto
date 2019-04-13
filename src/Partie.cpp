@@ -61,16 +61,16 @@ Partie::Partie()
     //ctor
 }
 
-void Partie::Jeu(){
+void Partie::Jeu(int forme){
+
+    bool quit=false;
+    bool tourJoueur=true;
 
     VueJoueur* vue=new VueJoueur();
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
         {
-           // partie.getPlateau().getXY(i,j);
-            //printf("a\n");
-
             vue->chargerReserve(i,j,this->getReserve().getXY(i,j));
 
         }
@@ -80,18 +80,24 @@ void Partie::Jeu(){
     bool gagne=false;
     Piece* liste[16][4];
     Piece* pieces[4];
+    int nb_null=0;
 
     while(!gagne){
 
-        vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+        if(tourJoueur){
+            //vue-> affTourJoueur();
+            tourJoueur=false;
+        }else {
+            tourJoueur=true;
+        }
+        quit=vue->clicJouer(&xReserve, &yReserve, &xPlateau, &yPlateau);
+
         if( !this->getReserve().getXY(yReserve,xReserve)->isnull && this->getPlateau().getXY(yPlateau,xPlateau)->isnull ){
             vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(yReserve,xReserve));
             vue->viderReserve(yReserve,xReserve);
             this->getPlateau().placer(this->getReserve().getXY(yReserve,xReserve),xPlateau,yPlateau);
-
-            cout<<this->getPlateau().getXY(xPlateau,yPlateau)->isnull<<endl;
-
-            int nb_liste = Combinaison::getListePieces(2,this->getPlateau(),xPlateau,yPlateau,liste);
+            nb_null++;
+            int nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),xPlateau,yPlateau,liste);
             cout<<"nb_liste"<<nb_liste<<endl;
             int i=0;
             while(i<nb_liste && !gagne){
@@ -100,10 +106,18 @@ void Partie::Jeu(){
                     }
 
                 gagne=this->gagne(liste[i]);
-                cout<<"gagne "<<gagne<<endl;
+                /*if(gagne){
+                    vue->avoirGagne();
+                }*/
                 i++;
 
             }
+
+            /*if(nb_null==16){
+                vue->avoirPerdu();
+            }*/
+
+
         }
 
     }

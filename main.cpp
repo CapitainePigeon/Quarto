@@ -1,20 +1,13 @@
 #include <iostream>
-#include "Piece.h"
-#include "Combinaison.h"
-#include "Partie.h"
-#include "Plateau.h"
-#include "VueJoueur.h"
-#include <SDL2/SDL.h>
-#include <stdio.h>
+
+#include "Menu.h"
 
 using namespace std;
 
 int main(int argc,char** argv)
 {
-
-
-    Partie partie = Partie();
-    partie.Jeu();
+    Menu mn;
+	mn.MenuBoucle();
 
     //r.affiche();
     /*piece p= piece(true,true,true,true);

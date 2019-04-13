@@ -1,10 +1,11 @@
 #include "VueJoueur.h"
+
 #include <exception>
 #include <iostream>
 #include <string.h>
 #include <string>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -13,13 +14,15 @@ SDL_Surface* gPiece;
 SDL_Surface* gScreenSurface;
 SDL_Rect image;
 const int SCREEN_WIDTH = 890;
-const int SCREEN_HEIGHT = 390;
+const int SCREEN_HEIGHT = 500;
 
 VueJoueur::VueJoueur()
 {
     gWindow = NULL;
     gScreenSurface = NULL;
     gPiece = NULL;
+
+
 
     initialiser();
     SDL_Rect stretchRect;
@@ -112,6 +115,16 @@ bool VueJoueur::initialiser()
 {
     //Initialization flag
     bool success = true;
+
+   /*if (TTF_Init() != 0) {
+        cout << "Erreur lors de l'initialisation de la SDL_ttf : " << TTF_GetError() << endl;SDL_Quit();exit(1);
+    }
+
+    // FONTS
+   font = TTF_OpenFont("font/police.ttf",70);
+  	  if (font == NULL) {
+         	   cout << "Failed to load police.ttf! SDL_TTF Error: " << TTF_GetError() << endl; SDL_Quit();exit(1);
+		}*/
 
     //Initialize SDL
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
@@ -296,8 +309,9 @@ int VueJoueur::coordonnee(int x)
     return xretour;
 }
 
-void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau)
+bool VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlateau)
 {
+    bool quit = false;
     *xReserve = -1;
     *yReserve = -1;
     *xPlateau = -1;
@@ -308,8 +322,11 @@ void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
     {
         while( SDL_PollEvent( &e ) )
         {
-
-            if( e.type == SDL_MOUSEBUTTONDOWN)
+            if (e.type == SDL_QUIT) {
+                    quit = true;
+                    SDL_Quit();
+            }
+            else if( e.type == SDL_MOUSEBUTTONDOWN)
             {
                 //printf("cc");
                 SDL_GetMouseState( &x, &y );
@@ -325,7 +342,11 @@ void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
     {
         while( SDL_PollEvent( &e ) )
         {
-            if( e.type == SDL_MOUSEBUTTONUP)
+            if (e.type == SDL_QUIT) {
+                    quit = true;
+                    SDL_Quit();
+            }
+            else if( e.type == SDL_MOUSEBUTTONUP)
             {
                 SDL_GetMouseState( &x, &y );
                 *xPlateau=coordonnee(y);
@@ -337,4 +358,31 @@ void VueJoueur::clicJouer(int* xReserve, int* yReserve,int* xPlateau,int* yPlate
         }
     }
     printf("x1 %d  y1 %d     x2 %d  y2 %d\n",*xReserve,*yReserve,*xPlateau,*yPlateau);
+
+    return quit;
 }
+
+/*void VueJoueur::affTourJoueur(){
+    char format [50];
+    sprintf(format, "C'est à votre tour de jouer !");
+    font_color.r = 195;font_color.g = 0;font_color.b = 0;
+    font_im.setSurface(TTF_RenderText_Solid(font,format,font_color));
+    font_im.creerTextureAPartirDeSurface(renderer);
+    SDL_Rect positionTitre;
+    positionTitre.x = 100;positionTitre.y = 450;positionTitre.w = 300;positionTitre.h = 30;
+    SDL_RenderCopy(renderer,font_im.getTexture(),NULL,&positionTitre);
+
+}*/
+
+/*void VueJoueur::avoirGagne(){
+    sprintf(format, "Vous avez perdu en %d secondes", t);
+			font_color.r = 195;font_color.g = 0;font_color.b = 0;
+			font_im.setSurface(TTF_RenderText_Solid(font,format,font_color));
+			font_im.creerTextureAPartirDeSurface(renderer);
+			SDL_Rect positionTitre;
+			positionTitre.x = 4*TAILLE_SPRITE;positionTitre.y = 13*TAILLE_SPRITE;positionTitre.w = 12*TAILLE_SPRITE;positionTitre.h = 2*TAILLE_SPRITE;
+			SDL_RenderCopy(renderer,font_im.getTexture(),NULL,&positionTitre);
+
+}*/
+
+
