@@ -25,6 +25,7 @@ class VueJoueur
         void avoirGagne();
         void avoirPerdu();
         void affTourJoueur(bool &tourJoueur);
+        void afficherChoix(Piece* piece);
 
     protected:
 

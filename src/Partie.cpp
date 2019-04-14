@@ -65,7 +65,7 @@ Partie::Partie()
 void Partie::Jeu(int forme){
 
     bool quit=false;
-    bool tourJoueur=false;
+    bool tourJoueur=true;
 
     VueJoueur* vue=new VueJoueur();
     for (int i = 0; i < 4; i++)
@@ -84,16 +84,18 @@ void Partie::Jeu(int forme){
     int nb_null=0;
     bool AChoisi=false;
     vue-> affTourJoueur(tourJoueur);
-    while(tourJoueur && (!AChoisi || this->getReserve().getXY(xReserve,yReserve)->isnull )){
+    while(!AChoisi || this->getReserve().getXY(xReserve,yReserve)->isnull ){
         cout<<" Tour Reserve humain "<<endl;
         quit=vue->clicReserve(&yReserve, &xReserve);
         AChoisi=true;
     }
+    vue->viderReserve(xReserve,yReserve);
+    vue->afficherChoix(this->getReserve().getXY(xReserve,yReserve));
 
     while(!quit){
 
         vue-> affTourJoueur(tourJoueur);
-        if(!tourJoueur){
+        if(tourJoueur){
             cout<<" Tour de IA "<<endl;
             ChoisirRecur( &xReserve, &yReserve, &xPlateau, &yPlateau, nb_null, 0,1,forme,&xReserve2, &yReserve2,2+(nb_null/4));
         }else{
@@ -101,14 +103,14 @@ void Partie::Jeu(int forme){
             AChoisi=false;
             while(!quit &&(!AChoisi || !this->getPlateau().getXY(xPlateau,yPlateau)->isnull)){
                 quit=vue->clicPlateau( &xPlateau, &yPlateau);
-                this->getPlateau().affiche();
+                //this->getPlateau().affiche();
                // cout<<this->getPlateau().getXY(xPlateau,yPlateau)->getCaractere()<<endl;
                 AChoisi=true;
             }
         }
         if(!quit  ){
             vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(xReserve,yReserve));
-            vue->viderReserve(xReserve,yReserve);
+
             this->getPlateau().placer(this->getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
             //this->getPlateau().affiche();
             nb_null++;
@@ -116,16 +118,15 @@ void Partie::Jeu(int forme){
             //cout<<"nb_liste"<<nb_liste<<endl;
             int i=0;
             while(i<nb_liste && !gagne){
-                    /*for(int j=0;j<4;j++){
-                        cout<<liste[i][j]->isnull<<endl;
-                    }*/
-
                 gagne=this->gagne(liste[i]);
                 if(gagne){
-                    vue->avoirGagne();
+                    if(tourJoueur){
+                        vue->avoirGagne();
+                    }else{
+                        vue->avoirPerdu();
+                    }
                 }
                 i++;
-
             }
 
             /*if(nb_null==16){
@@ -134,7 +135,7 @@ void Partie::Jeu(int forme){
 
 
         }
-        if(tourJoueur){
+        if(!tourJoueur){
             while(!AChoisi || this->getReserve().getXY(xReserve,yReserve)->isnull){
                 cout<<" Tour Reserve humain "<<endl;
                 quit=vue->clicReserve(&yReserve, &xReserve);
@@ -144,6 +145,8 @@ void Partie::Jeu(int forme){
             xReserve=xReserve2;
             yReserve=yReserve2;
         }
+        vue->viderReserve(xReserve,yReserve);
+        vue->afficherChoix(this->getReserve().getXY(xReserve,yReserve));
 
     }
 }
@@ -166,13 +169,7 @@ float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPla
                 if(this->getPlateau().getXY(i,j)->isnull){
                     this->getPlateau().placer(this->getReserve().getXY(*xReserve,*yReserve),i,j);
 
-                    /*
-                    cout<<"IA x "<<x<<" y "<<y<<" i "<<i<<" j "<<j<<endl;
-                    this->getPlateau().affiche();
-                    cout<<" "<<endl;
-                    this->getReserve().affiche();
-                    cout<<" "<<endl;
-                    cout<<" "<<endl;*/
+
 
                     nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),i,j,liste);
                    // cout<<"nb_liste"<<nb_liste<<endl;
@@ -216,12 +213,8 @@ float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPla
                     }
                     this->getPlateau().getXY(i,j)->isnull=true;
                     this->getReserve().getXY(*xReserve,*yReserve)->isnull=false;
-
-
                 }
-
         }
-
     }
     //this->getPlateau().affiche();
     if(profondeur==0){

@@ -240,6 +240,22 @@ void VueJoueur::chargerPlateau(int x,int y,Piece* piece)
     SDL_FreeSurface(gPiece);
     gPiece = NULL;
 }
+
+void VueJoueur::afficherChoix(Piece* piece)
+{
+
+    image.x = 600;
+    image.y = 410;
+    image.w=90;
+    image.h=90;
+
+    loadpiece(*piece);
+    SDL_BlitScaled( gPiece, NULL, gScreenSurface, &image );
+    SDL_UpdateWindowSurface( gWindow );
+    SDL_FreeSurface(gPiece);
+    gPiece = NULL;
+}
+
 void VueJoueur::chargerReserve(int x,int y,Piece* piece)
 {
     image.x = x*100;
@@ -396,6 +412,17 @@ void VueJoueur::avoirGagne(){
         stretchRect.w = 500;
         stretchRect.h = 100;
         SDL_BlitScaled( loadSurface( "images/gagne.png" ), NULL, gScreenSurface, &stretchRect );
+        SDL_UpdateWindowSurface( gWindow );
+
+}
+
+void VueJoueur::avoirPerdu(){
+    SDL_Rect stretchRect;
+        stretchRect.x = 200;
+        stretchRect.y = 200;
+        stretchRect.w = 500;
+        stretchRect.h = 100;
+        SDL_BlitScaled( loadSurface( "images/perdu.png" ), NULL, gScreenSurface, &stretchRect );
         SDL_UpdateWindowSurface( gWindow );
 
 }
