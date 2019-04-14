@@ -14,13 +14,14 @@ public:
     Piece* getXY( int x,  int y);
     void affiche();
     void emptyXY ( int x, int y);
+    int nb_colonne;
+    int nb_ligne;
+    Piece* plat[4][4] ;
 
 protected:
 
 private:
-    int nb_colonne;
-    int nb_ligne;
-    Piece* plat[4][4] ;
+
 
 
 };

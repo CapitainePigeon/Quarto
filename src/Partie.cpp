@@ -11,6 +11,7 @@ using namespace std;
 
 Plateau reserve;
 Plateau plat;
+Piece* liste[16][4];
 
 Partie::Partie()
 {
@@ -79,7 +80,6 @@ void Partie::Jeu(int forme){
     int xReserve, yReserve, xPlateau, yPlateau;
     int xReserve2, yReserve2;
     bool gagne=false;
-    Piece* liste[16][4];
     Piece* pieces[4];
     int nb_null=0;
     bool AChoisi=false;
@@ -95,7 +95,7 @@ void Partie::Jeu(int forme){
         vue-> affTourJoueur(tourJoueur);
         if(!tourJoueur){
             cout<<" Tour de IA "<<endl;
-            ChoisirRecur( &xReserve, &yReserve, &xPlateau, &yPlateau, nb_null, 0,1,forme,&xReserve2, &yReserve2);
+            ChoisirRecur( &xReserve, &yReserve, &xPlateau, &yPlateau, nb_null, 0,1,forme,&xReserve2, &yReserve2,2+(nb_null/4));
         }else{
             cout<<" Tour Plateau humain "<<endl;
             AChoisi=false;
@@ -110,7 +110,7 @@ void Partie::Jeu(int forme){
             vue->chargerPlateau(yPlateau,xPlateau,this->getReserve().getXY(xReserve,yReserve));
             vue->viderReserve(xReserve,yReserve);
             this->getPlateau().placer(this->getReserve().getXY(xReserve,yReserve),xPlateau,yPlateau);
-            this->getPlateau().affiche();
+            //this->getPlateau().affiche();
             nb_null++;
             int nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),xPlateau,yPlateau,liste);
             //cout<<"nb_liste"<<nb_liste<<endl;
@@ -148,21 +148,21 @@ void Partie::Jeu(int forme){
     }
 }
 
-float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPlateau,int nb_null,int profondeur,int equipe,int forme,int* xReserve2,int* yReserve2)
+float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPlateau,int nb_null,int profondeur,int equipe,int forme,int* xReserve2,int* yReserve2,int profondeurMax)
 {
     bool gagne;
+    int ig;
 
     if(nb_null>=16){
         cout<<" nbNull>=16 "<<endl;
         return 0;
     }
-    Piece* liste[16][4];
+
     float score;
     int nb_liste;
     float bestScore=-1000*equipe;
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-
                 if(this->getPlateau().getXY(i,j)->isnull){
                     this->getPlateau().placer(this->getReserve().getXY(*xReserve,*yReserve),i,j);
 
@@ -175,30 +175,37 @@ float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPla
                     cout<<" "<<endl;*/
 
                     nb_liste = Combinaison::getListePieces(forme,this->getPlateau(),i,j,liste);
-                    //cout<<"nb_liste"<<nb_liste<<endl;
-                    int ig=0;
+                   // cout<<"nb_liste"<<nb_liste<<endl;
+                    ig=0;
                     gagne=false;
                     while(ig<nb_liste && !gagne){
-                        gagne=this->gagne(liste[i]);
+                        gagne=this->gagne(liste[ig]);
                         ig++;
                     }
                     if(gagne){
+                        if(profondeur==0){
+                            //IA Gagne
+                            //*xReserve2=x;
+                            //*yReserve2=y;
+                            *xPlateau=i;
+                            *yPlateau=j;
+                        }
                         this->getPlateau().getXY(i,j)->isnull=true;
                         this->getReserve().getXY(*xReserve,*yReserve)->isnull=false;
                         return equipe;
                     }else{
-                        if(profondeur<2){
+                        if(profondeur<profondeurMax){
                             for(int x=0;x<4;x++){
                                 for(int y=0;y<4;y++){
                                     if(!this->getReserve().getXY(x,y)->isnull){
-                                        score=ChoisirRecur( &x,&y, xPlateau, yPlateau, nb_null+1, profondeur+1,equipe*-1,forme,xReserve2,yReserve2);
+                                        score=ChoisirRecur( &x,&y, xPlateau, yPlateau, nb_null+1, profondeur+1,equipe*-1,forme,xReserve2,yReserve2,profondeurMax);
                                         if((equipe==1 && score>bestScore)||(equipe==-1 && score<bestScore)){
                                             bestScore=score;
                                             if(profondeur==0){
-                                                *xReserve2=i;
-                                                *yReserve2=j;
-                                                *xPlateau=x;
-                                                *yPlateau=y;
+                                                *xReserve2=x;
+                                                *yReserve2=y;
+                                                *xPlateau=i;
+                                                *yPlateau=j;
                                             }
                                         }
                                     }
@@ -212,17 +219,14 @@ float Partie::ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPla
 
 
                 }
-                if(profondeur<1){
-
-                }else{
-
-                }
 
         }
 
     }
     //this->getPlateau().affiche();
-    //cout<<" IA Recur return "<<bestScore*0.9<<endl;
+    if(profondeur==0){
+        cout<<" IA Recur return "<<bestScore*0.9<<endl;
+    }
     return bestScore*0.9;
 }
 

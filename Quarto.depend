@@ -69,7 +69,7 @@
 1552294191 d:\cours\polytech\algo complexité\quarto1\include\reservedepiece.h
 	"piece.h"
 
-1554306859 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
+1555239581 d:\cours\polytech\algo complexité\quarto1\include\plateau.h
 	"Piece.h"
 
 1555177299 source:d:\cours\polytech\algo complexité\quarto1\src\piece.cpp
@@ -1056,7 +1056,7 @@
 	"Piece.h"
 	"Plateau.h"
 
-1555194066 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
+1555244496 source:d:\cours\polytech\algo complexité\quarto1\src\partie.cpp
 	"Partie.h"
 	"piece.h"
 	"plateau.h"
@@ -1066,7 +1066,7 @@
 	<iostream>
 	<string.h>
 
-1555194066 d:\cours\polytech\algo complexité\quarto1\include\partie.h
+1555244042 d:\cours\polytech\algo complexité\quarto1\include\partie.h
 	"Piece.h"
 	"Plateau.h"
 

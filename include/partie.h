@@ -12,7 +12,8 @@ class Partie
         Plateau getPlateau();
         Plateau getReserve();
         void Jeu(int forme);
-        float ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPlateau,int nb_null,int profondeur,int equipe,int forme,int* xReserve2,int* yReserve2);
+        float ChoisirRecur(int* xReserve, int* yReserve,int* xPlateau, int* yPlateau,int nb_null,int profondeur,
+                           int equipe,int forme,int* xReserve2,int* yReserve2,int profondeurMax);
 
     protected:
 
